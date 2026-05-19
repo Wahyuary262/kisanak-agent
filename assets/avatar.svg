@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0d0d1a"/>
+    </linearGradient>
+    <linearGradient id="fire" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ff4500"/>
+      <stop offset="50%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#ffaa00"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- Outer ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#fire)" stroke-width="4" opacity="0.4"/>
+  <circle cx="256" cy="256" r="180" fill="none" stroke="url(#fire)" stroke-width="2" opacity="0.7"/>
+
+  <!-- K letter -->
+  <g filter="url(#glow)">
+    <path d="M 170 130 L 170 382 L 210 382 L 210 280 L 290 382 L 342 382 L 250 270 L 338 130 L 290 130 L 210 250 L 210 130 Z"
+          fill="url(#fire)" stroke="#ffaa00" stroke-width="2"/>
+  </g>
+
+  <!-- Fire emoji style accent -->
+  <g transform="translate(390, 110)">
+    <path d="M 0 30 Q -10 10 5 0 Q 0 15 10 18 Q 5 5 20 0 Q 15 20 25 25 Q 20 35 10 40 Q 0 38 0 30 Z"
+          fill="url(#fire)" filter="url(#glow)"/>
+  </g>
+
+  <!-- Bottom text -->
+  <text x="256" y="450" font-family="monospace" font-size="28" font-weight="bold"
+        fill="url(#fire)" text-anchor="middle" letter-spacing="8">KISANAK</text>
+  <text x="256" y="478" font-family="monospace" font-size="12"
+        fill="#888" text-anchor="middle" letter-spacing="4">EXECUTION AGENT</text>
+</svg>
